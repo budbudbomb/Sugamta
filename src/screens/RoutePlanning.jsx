@@ -946,14 +946,26 @@ export default function RoutePlanning() {
             <p className="text-slate-400 text-xs m-0 mt-1 max-w-25rem mx-auto">Please assign one or more polling booths to a Route in the mapping grid to configure their customized travel checkpoints and vehicles.</p>
           </div>
         ) : (
-          <div className="p-fluid grid">
+          <div 
+            className="flex gap-4 overflow-x-auto pb-4 pt-1 hide-scrollbar scroll-smooth w-full p-fluid"
+            style={{ 
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+              flexFlow: 'row nowrap'
+            }}
+          >
             {Object.keys(activeRoutes).map((routeName) => {
               const booths = activeRoutes[routeName];
               const config = routeConfigs[routeName];
               const rColor = getRouteColor(routeName);
 
               return (
-                <div key={routeName} className="col-12 md:col-6 lg:col-4 animate-fade-in">
+                <div 
+                  key={routeName} 
+                  className="animate-fade-in flex-shrink-0"
+                  style={{ width: '380px' }}
+                >
                   <Card 
                     className="glass-panel" 
                     style={{ borderTop: `6px solid ${rColor}` }}

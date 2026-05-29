@@ -6,7 +6,9 @@ import {
   VehicleAcquisition,
   VehicleAllocation,
   TransitLog,
-  VehicleRelease
+  VehicleRelease,
+  FuelStationAssignment,
+  FuelBillingPortal
 } from './screens/SecondaryMocks';
 
 function App() {
@@ -27,6 +29,10 @@ function App() {
         return <TransitLog onNext={(nextScreen) => setActiveScreen(nextScreen)} />;
       case 'vehicle-release':
         return <VehicleRelease />;
+      case 'fuel-station':
+        return <FuelStationAssignment onNext={(nextScreen) => setActiveScreen(nextScreen)} />;
+      case 'fuel-billing':
+        return <FuelBillingPortal />;
       default:
         return <RoutePlanning />;
     }

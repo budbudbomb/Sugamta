@@ -40,6 +40,20 @@ export default function Sidebar({ activeScreen, setActiveScreen }) {
       title: '6. Vehicle Release',
       icon: 'pi pi-verified',
       description: 'Final fuel & DSC release'
+    },
+    {
+      id: 'fuel-station',
+      title: '7. Fuel Station Appt.',
+      icon: 'pi pi-map-marker',
+      description: 'Assign fuel stations block wise',
+      badge: 'DEO'
+    },
+    {
+      id: 'fuel-billing',
+      title: '8. Fuel Billing & Logs',
+      icon: 'pi pi-wallet',
+      description: 'Log fillings & amount due',
+      badge: 'Billing'
     }
   ];
 
@@ -79,8 +93,8 @@ export default function Sidebar({ activeScreen, setActiveScreen }) {
                       <span 
                         className="text-xs px-2 py-0.5 border-round-md font-semibold"
                         style={{
-                          background: item.badge === 'Active' ? 'rgba(34, 197, 94, 0.2)' : 'rgba(234, 179, 8, 0.2)',
-                          color: item.badge === 'Active' ? '#4ade80' : '#facc15',
+                          background: item.badge === 'Active' ? 'rgba(34, 197, 94, 0.2)' : item.badge === 'DEO' ? 'rgba(249, 115, 22, 0.2)' : item.badge === 'Billing' ? 'rgba(20, 184, 166, 0.2)' : 'rgba(234, 179, 8, 0.2)',
+                          color: item.badge === 'Active' ? '#4ade80' : item.badge === 'DEO' ? '#f97316' : item.badge === 'Billing' ? '#14b8a6' : '#facc15',
                           fontSize: '10px'
                         }}
                       >
